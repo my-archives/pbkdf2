@@ -2,6 +2,9 @@ pbkdf2
 ======
 Hash password and compare with PBKDF2, sha1, sha256, sha512, etc.
 
+### Required: >= node-v0.11.11
+* https://github.com/joyent/node/releases/tag/v0.11.11
+
 ### Install
 
 ```
