@@ -7,14 +7,14 @@ Hash password and compare with PBKDF2, sha1, sha256, sha512, etc.
 
 ### Install
 
-```
+```shell
 npm install pbkdf2
 ```
 
 
 ### Example
 
-```
+```js
 var pbkdf2 = require('pbkdf2');
 var p = new Buffer('password');
 var s = new Buffer('salt');
