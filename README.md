@@ -30,3 +30,7 @@ var pwd = pbkdf2.hashSync(p, s, 1, 20, 'sha256');
 #### `generateSalt`
 #### `generateSaltSync`
 #### `verify`?
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fundon/pbkdf2/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
