@@ -1,0 +1,16 @@
+{
+  "name": "pbkdf2",
+  "version": "0.0.1",
+  "description": "Hash password and compare using PBKDF2, pbkdf2-sha1, pbkdf2-sha256, pbkdf2-sha512.",
+  "keywords": ["pbkdf2", "pbkdf2-sha1", "pbkdf2-sha256", "pbkdf2-sha512", "password", "salt", "pwd", "authentication", "auth"],
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "git://github.com/fundon/pbkdf2.git",
+  "author": "fundon <cfddream@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.11.11"
+  }
+}
