@@ -17,3 +17,13 @@ var p = new Buffer('password');
 var s = new Buffer('salt');
 var pwd = pbkdf2.hashSync(p, s, 1, 20, 'sha256');
 ```
+
+
+
+### API
+
+#### `hash`
+#### `hashSync`
+#### `generateSalt`
+#### `generateSaltSync`
+#### `verify`?
