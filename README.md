@@ -30,7 +30,7 @@ npm install pbkdf2
 ```js
 var pbkdf2 = require('pbkdf2');
 var p = new Buffer('password');
-var s = new Buffer('salt');
+var s = new Buffer(pbkdf2.generateSaltSync(32));
 var pwd = pbkdf2.hashSync(p, s, 1, 20, 'sha256');
 ```
 
