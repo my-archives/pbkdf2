@@ -14,7 +14,7 @@ pbkdf2
 </tr>
 <tr>
   <td>Node Version</td>
-  <td>>= [0.11.11](https://github.com/joyent/node/releases/tag/v0.11.11)</td>
+  <td>>= <a href="https://github.com/joyent/node/releases/tag/v0.11.11">0.11.11</a></td>
 </tr>
 </table>
 
