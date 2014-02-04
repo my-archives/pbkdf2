@@ -13,46 +13,47 @@ var pbkdf2Sync  = crypto.pbkdf2Sync;
  * c: iterations
  * a: algorithm
  * h: passwordHash
- * dkLen: dkLen
- * sLen: saltLen
+ * keylen
+ * saltLen
  *
  */
 
-exports.generateSalt = function (cb, sLen) {
-  if (!sLen) sLen = 32;
-  randomBytes(sLen, function (err, buf) {
+exports.generateSalt = function (cb, saltlen) {
+  if (!saltlen) saltlen = 32;
+  randomBytes(saltLen, function (err, buf) {
     if (err) throw err;
     var s = buf.toString('hex');
     cb(s);
   });
 }
 
-exports.generateSaltSync = function (sLen) {
+exports.generateSaltSync = function (saltlen) {
   var s = '';
-  if (!sLen) sLen = 32;
+  if (!saltlen) saltlen = 32;
   try {
-    s = new Buffer(randomBytes(sLen / 2)).toString('hex');
+    s = new Buffer(randomBytes(saltlen / 2)).toString('hex');
   } catch (e) {}
   return s;
 }
 
-exports.hash = function (p, s, c, dkLen, a, cb) {
+exports.hash = function (p, s, c, keylen, a, cb) {
   if (!c) c = 4096;
-  if (!dkLen) dkLen = 64;
+  if (!keylen) dkLen = 64;
   if (!a) a = 'sha256';
-  pbkdf2Sync(p, s, c, dkLen / 2, a, function (err, buf) {
+  pbkdf2Sync(p, s, c, keylen / 2, a, function (err, buf) {
     if (err) throw err;
     var h = buf.toString('hex');
     cb(h);
   });
 };
 
-exports.hashSync = function (p, s, c, dkLen, a) {
+exports.hashSync = function (p, s, c, keylen, a) {
   if (!c) c = 4096;
-  if (!dkLen) dkLen = 64;
+  if (!keylen) keylen = 64;
   if (!a) a = 'sha256';
-  return pbkdf2Sync(p, s, c, dkLen / 2, a).toString('hex');
+  return pbkdf2Sync(p, s, c, keylen / 2, a).toString('hex');
 };
 
-exports.verify = function (h, p) {
-};
+exports.compare = function (p, h, cb) {};
+
+exports.compareSync = function (p, h) {};
