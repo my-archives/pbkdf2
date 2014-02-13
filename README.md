@@ -29,9 +29,10 @@ npm install pbkdf2
 
 ```js
 var pbkdf2 = require('pbkdf2');
-var p = new Buffer('password');
-var s = new Buffer(pbkdf2.generateSaltSync(32));
+var p = 'password';
+var s = pbkdf2.generateSaltSync(32);
 var pwd = pbkdf2.hashSync(p, s, 1, 20, 'sha256');
+var bool = pbkdf2.compareSync(pwd, p, s, 1, 20, 'sha256');
 ```
 
 
@@ -41,7 +42,7 @@ var pwd = pbkdf2.hashSync(p, s, 1, 20, 'sha256');
 ### `hashSync`
 ### `generateSalt`
 ### `generateSaltSync`
-### `compare`?
-### `compareSync`?
+### `compare`
+### `compareSync`
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fundon/pbkdf2/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
