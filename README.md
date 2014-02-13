@@ -38,11 +38,11 @@ var bool = pbkdf2.compareSync(pwd, p, s, 1, 20, 'sha256');
 
 ## API
 
-### `hash`
-### `hashSync`
-### `generateSalt`
-### `generateSaltSync`
-### `compare`
-### `compareSync`
+* `hash(password, salt, iterations, keylen, callback(password_hass))`
+* `hashSync(password, salt, iterations, keylen)`, return password_hass
+* `generateSalt(callback(salt), saltlen)`
+* `generateSaltSync(saltlen)`, return salt
+* `compare(password_hass, password, salt, iterations, keylen, callback(bool))`
+* `compareSync(password_hass, password, salt, iterations, keylen)`, return bool
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fundon/pbkdf2/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
