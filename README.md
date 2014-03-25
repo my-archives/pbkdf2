@@ -1,5 +1,4 @@
-pbkdf2
-======
+# pbkdf2 [![Build Status](https://travis-ci.org/fundon/pbkdf2.svg)](https://travis-ci.org/fundon/pbkdf2)
 
 ### Information
 
@@ -39,7 +38,7 @@ var bool = pbkdf2.compareSync(pwd, p, s, 1, 20, 'sha256');
 ## API
 
 * `hash(password, salt, iterations, keylen, algorithm, callback(password_hass))`
-* `hashSync(password, salt, iterations, keylen, algorithm)`, return password_hass
+* `hashSync(password, salt, iterations, keylen, algorithm)`, return password_hash
 * `generateSalt(callback(salt), saltlen)`
 * `generateSaltSync(saltlen)`, return salt
 * `compare(password_hass, password, salt, iterations, keylen, algorithm, callback(bool))`
