@@ -64,6 +64,10 @@ function compareSync(h, p, s, c, keylen, a) {
   return h === hashSync(p, s, c, keylen, a);
 };
 
+/**
+ *  Expose
+ */
+
 exports.generateSalt      = generateSalt;
 exports.hash              = hash;
 exports.compare           = compare;
