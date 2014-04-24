@@ -1,4 +1,5 @@
 # pbkdf2 [![Build Status](https://travis-ci.org/fundon/pbkdf2.svg)](https://travis-ci.org/fundon/pbkdf2)
+  ***NOTE: Password_hash and salt is a hex string.***
 
 ### Information
 
@@ -37,11 +38,11 @@ var bool = pbkdf2.compareSync(pwd, p, s, 1, 20, 'sha256');
 
 ## API
 
-* `hash(password, salt, iterations, keylen, algorithm, callback(password_hash))`
+* `hash(password, salt, iterations, keylen, algorithm, callback(error, password_hash))`
 * `hashSync(password, salt, iterations, keylen, algorithm)`, return password_hash
-* `generateSalt(callback(salt), saltlen)`
+* `generateSalt(callback(error, salt), saltlen)`
 * `generateSaltSync(saltlen)`, return salt
-* `compare(password_hash, password, salt, iterations, keylen, algorithm, callback(bool))`
+* `compare(password_hash, password, salt, iterations, keylen, algorithm, callback(error, bool))`
 * `compareSync(password_hash, password, salt, iterations, keylen, algorithm)`, return bool
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fundon/pbkdf2/trend.png)](https://bitdeli.com/free "Bitdeli Badge")

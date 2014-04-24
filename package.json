@@ -1,6 +1,6 @@
 {
   "name": "pbkdf2",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Hash password and compare using PBKDF2, pbkdf2-sha1, pbkdf2-sha256, pbkdf2-sha512.",
   "keywords": [
     "pbkdf2",

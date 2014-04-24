@@ -36,7 +36,7 @@ describe('#hash - hash password', function () {
   var s = 'salt';
 
   it("It's value is 0c60c80f961f0e71f3a9.", function (done) {
-    pbkdf2.hash(p, s, 1, 20, 'sha1', function (h) {
+    pbkdf2.hash(p, s, 1, 20, 'sha1', function (err, h) {
       assert.equal(h, '0c60c80f961f0e71f3a9');
       assert.equal(h.length, 20);
       done();
@@ -48,7 +48,7 @@ describe('#hash - hash password', function () {
 describe('#generateSalt - generate random salt', function () {
 
   it("It's length is 32.", function (done) {
-    pbkdf2.generateSalt(function (s) {
+    pbkdf2.generateSalt(function (err, s) {
       assert.equal(s.length, 32);
       done();
     }, 32);
@@ -57,9 +57,18 @@ describe('#generateSalt - generate random salt', function () {
 
 describe('#compare - Compare Password', function () {
   it("true", function (done) {
-    pbkdf2.compare('0c60c80f961f0e71f3a9', 'password', 'salt', 1, 20, 'sha1', function (b) {
+    pbkdf2.compare('0c60c80f961f0e71f3a9', 'password', 'salt', 1, 20, 'sha1', function (err, b) {
       assert.equal(b, true);
       done();
     });
+  })
+});
+
+describe('#generateSalt - generate random salt and to base64 string', function () {
+  it("Should be base64 string.", function (done) {
+    pbkdf2.generateSalt(function (err, s) {
+      assert.equal(s.length, 32);
+      done();
+    }, 32);
   })
 });
